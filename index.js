@@ -14,18 +14,18 @@ class Neighborhood {
 
   deliveries() {
     return store.deliveries.filter(delivery => {
-      return delivery.neighborhoodId === this.id 
+      return delivery.neighborhoodId === this.id
     });
   }
   customers() {
     return store.customers.filter(customer => {
-      return customer.neighborhoodId === this.id 
+      return customer.neighborhoodId === this.id
     });
   }
   meals() {
     let neighborhoodMeals = this.deliveries().map(delivery => {
       return delivery.meal()});
-      let uniqueNeighborhoodMeals = [...new Set(neighborhoodMeals)]; 
+      let uniqueNeighborhoodMeals = [...new Set(neighborhoodMeals)];
       return uniqueNeighborhoodMeals;
   }
 }
